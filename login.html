@@ -444,7 +444,10 @@
                           onClose: function(){
                               // Redirect
                               console.log(authResult, redirectUrl)
-                              window.location.replace("https://pitangui.amazon.com/spa/skill/account-linking-status.html?vendorId=M3EOZP8IYRCUI1")
+                              redirectURI = "https://pitangui.amazon.com/spa/skill/account-linking-status.html?vendorId=M3EOZP8IYRCUI1#state="+'somestate'+
+                                "&access_token="+authResult.user.uid+
+                                "&token_type=Bearer"
+                              window.location.replace(redirectURI)
                           }
                       }
                     )
