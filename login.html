@@ -444,7 +444,7 @@
                           onClose: function(){
                               // Redirect
                               console.log(authResult, redirectUrl)
-                              redirectURI = "https://pitangui.amazon.com/spa/skill/account-linking-status.html?vendorId=M3EOZP8IYRCUI1#state="+'somestate'+
+                              redirectURI = "https://pitangui.amazon.com/spa/skill/account-linking-status.html?vendorId=M3EOZP8IYRCUI1#state="+getUrlParameter('state');+
                                 "&access_token="+authResult.user.uid+
                                 "&token_type=Bearer"
                               window.location.replace(redirectURI)
@@ -493,6 +493,21 @@
         // Initialize the FirebaseUI Widget using Firebase.
         var ui = new firebaseui.auth.AuthUI(firebase.auth()); 
         ui.start('#firebaseui-auth-container', uiConfig);
+        
+        var getUrlParameter = function getUrlParameter(sParam) {
+            var sPageURL = window.location.search.substring(1),
+                sURLVariables = sPageURL.split('&'),
+                sParameterName,
+                i;
+
+            for (i = 0; i < sURLVariables.length; i++) {
+                sParameterName = sURLVariables[i].split('=');
+
+                if (sParameterName[0] === sParam) {
+                    return sParameterName[1] === undefined ? true : decodeURIComponent(sParameterName[1]);
+                }
+            }
+        };
         
     </script>
 </body>
