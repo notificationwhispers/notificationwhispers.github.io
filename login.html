@@ -444,7 +444,7 @@
                           onClose: function(){
                               // Redirect
                               console.log(authResult, redirectUrl)
-                              redirectURI = "https://pitangui.amazon.com/spa/skill/account-linking-status.html?vendorId=M3EOZP8IYRCUI1#state="+getUrlParameter('state')+
+                              redirectURI = "https://pitangui.amazon.com/spa/skill/account-linking-status.html?vendorId=M3EOZP8IYRCUI1&state="+getUrlParameter('state')+
                                 "&access_token="+authResult.user.uid+
                                 "&token_type=Bearer"
                               window.location.replace(redirectURI)
