@@ -41,6 +41,33 @@
           background-color: #555;
         }
     </style>
+    
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.2.3/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+         https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/8.2.3/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.3/firebase-auth.js"></script>
+
+    <script>
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        var firebaseConfig = {
+        apiKey: "AIzaSyA5jvGf_CSPRyHK3jY88ErICo57dlskQkc",
+        authDomain: "whispers-bf95a.firebaseapp.com",
+        projectId: "whispers-bf95a",
+        storageBucket: "whispers-bf95a.appspot.com",
+        messagingSenderId: "383007851153",
+        appId: "1:383007851153:web:636568171ee25466b03530",
+        measurementId: "G-8L9R1DE09Z"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        firebase.analytics();
+    </script>
+    <script src="https://www.gstatic.com/firebasejs/ui/4.6.1/firebase-ui-auth.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.6.1/firebase-ui-auth.css" />
 </head>
 <body class="is-boxed">
     <div class="body-wrap boxed-container">
@@ -62,8 +89,11 @@
                 <div class="container">
                     <div class="hero-inner">
 						<div class="hero-copy">
-	                        <h3 class="hero-title mt-0 is-revealing">Sync your Smartphone Notifications</h3>
-	                        <p class="hero-paragraph is-revealing">A service to sync your smartphone notifications with your Smart Home device. Enable Alexa or Google Home to <i>whisper</i> your messages in your ear.</p>
+	                        <h3 class="hero-title mt-0 is-revealing">Sign-up or Login</h3>
+	                        <p class="hero-paragraph is-revealing">Create an account to sync your smartphone notifications with your Smart Home device. If you have already created an account using the Notification Whispers Android app, be sure to use the same credentials to login.</p>
+                            <div id="firebaseui-auth-container"></div>
+                            <div id="loader">Loading...</div>
+                            <br>
 						</div>
 						<div class="hero-illustration">
 							<div class="hero-bg">
@@ -331,84 +361,6 @@
                     </div>
                 </div>
             </section>
-
-            <section class="features section">
-                <div class="container">
-                    <div class="features-inner section-inner">
-						<div class="features-wrap">
-	                        <div class="feature">
-	                            <div class="feature-inner">
-									<div class="feature-header mb-16">
-										<div class="feature-icon mr-16">
-											<!--<svg width="32" height="32" xmlns="http://www.w3.org/2000/svg">
-											    <g fill-rule="nonzero" fill="none">
-											        <path d="M7 8H1a1 1 0 0 1-1-1V1a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v6a1 1 0 0 1-1 1zM19 8h-6a1 1 0 0 1-1-1V1a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v6a1 1 0 0 1-1 1z" fill="#4353FF"/>
-											        <path d="M19 20h-6a1 1 0 0 1-1-1v-6a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v6a1 1 0 0 1-1 1z" fill="#43F1FF"/>
-											        <path d="M31 8h-6a1 1 0 0 1-1-1V1a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v6a1 1 0 0 1-1 1z" fill="#4353FF"/>
-											        <path d="M7 20H1a1 1 0 0 1-1-1v-6a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v6a1 1 0 0 1-1 1z" fill="#43F1FF"/>
-											        <path d="M7 32H1a1 1 0 0 1-1-1v-6a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v6a1 1 0 0 1-1 1z" fill="#4353FF"/>
-											        <path d="M29.5 18h-3a.5.5 0 0 1-.5-.5v-3a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-.5.5z" fill="#43F1FF"/>
-											        <path d="M17.5 30h-3a.5.5 0 0 1-.5-.5v-3a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-.5.5zM29.5 30h-3a.5.5 0 0 1-.5-.5v-3a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-.5.5z" fill="#4353FF"/>
-											    </g>
-											</svg>-->
-                                            <img src="img/icon_white.png" style="width: 50px; height: 50px;">
-		                                </div>
-		                                <h4 class="feature-title m-0">Android App</h4>
-									</div>
-	                                <p class="text-sm mb-0">To sync your mobile notifications with your Smart Home device, you will need to download the Notification Whispers app. The app identifies when new notifications are delivered and keeps track of which notifications are active. This enables you to manage them from your Smart Home device.</p>
-	                            </div>
-	                        </div>
-							<div class="feature">
-	                            <div class="feature-inner">
-									<div class="feature-header mb-16">
-										<div class="feature-icon mr-16">
-		                                  <img src="img/alexa.png" style="width: 50px; height: 50px;">
-                                        </div>
-		                                <h4 class="feature-title m-0">Alexa Skill</h4>
-									</div>
-	                                <p class="text-sm mb-0">The <i>Notification Whispers</i> Alexa Skill enables your Alexa device to <i>whisper</i> your mobile notifications to you. It also provides you with ways to manage your notifications when you are away from your smartphone with commands like:</p>
-                                    <ul class="text-sm mb-0">
-                                        <li>"Read my notifications"</li>
-                                        <li>"Remove notification"</li>
-                                        <li>"Summarise my notifications"</li>
-                                    </ul>
-	                            </div>
-	                        </div>
-							<div class="feature">
-	                            <div class="feature-inner">
-									<div class="feature-header mb-16">
-										<div class="feature-icon mr-16">
-                                            <img src="img/google_home.jpg" style="width: 50px; height: 50px;">
-		                                </div>
-		                                <h4 class="feature-title m-0">Google Home</h4>
-									</div>
-	                                <p class="text-sm mb-0">Coming soon. Sign up to our Newsletter to get notified when this feature is available!</p>
-	                            </div>
-	                        </div>
-                            <div class="feature">
-	                            <div class="feature-inner">
-									<div class="feature-header mb-16">
-										<div class="feature-icon mr-16">
-                                            <img src="img/newsletter.png" style="width: 50px;">
-		                                </div>
-		                                <h4 class="feature-title m-0">Newsletter</h4>
-									</div>
-	                                <p class="text-sm mb-0">Sign up to our newsletter for updates on new features, tutorials and tips.</p><br>
-                                    <form class="hero-form field field-grouped is-revealing" action="https://formspree.io/f/xeqpnjqk" method="POST">
-                                        <div class="control control-expanded">
-                                            <input class="input" type="email" name="email" placeholder="Enter your email here..">
-                                        </div>
-                                        <div class="control">
-                                            <input class="button button-primary button-block" type="submit" value="Notify Me">
-                                        </div>
-                                    </form>
-	                            </div>
-	                        </div>
-                            
-						</div>
-                    </div>
-                </div>
-            </section>
         </main>
 
         <footer class="site-footer">
@@ -473,6 +425,73 @@
             </div>
         </footer>
     </div>
+    
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     <script src="./js/main.min.js"></script>
+    <script>
+        var authResult = null
+        var uiConfig = {
+            callbacks: {
+                signInSuccessWithAuthResult: function(authResult, redirectUrl) {
+                  // User successfully signed in.
+                  // Return type determines whether we continue the redirect automatically
+                  // or whether we leave that to developer to handle.
+                    Swal.fire(
+                      {
+                          title: 'All set!',
+                          text: 'Your Notification Whispers account has been created successfully.',
+                          icon:'success',
+                          onClose: function(){
+                              // Redirect
+                              console.log(authResult, redirectUrl)
+                              authResult = authResult window.location.replace("https://pitangui.amazon.com/spa/skill/account-linking-status.html?vendorId=M3EOZP8IYRCUI1")
+                          }
+                      }
+                    )
+                    
+                    return false;
+                },
+                signInFailure: function(error) {
+                    // Some unrecoverable error occurred during sign-in.
+                    // Return a promise when error handling is completed and FirebaseUI
+                    // will reset, clearing any UI. This commonly occurs for error code
+                    // 'firebaseui/anonymous-upgrade-merge-conflict' when merge conflict
+                    // occurs. Check below for more details on this.
+                    Swal.fire(
+                      'Oops!',
+                      'Sorry, something went wrong. Please try again.',
+                      'failure'
+                    )
+                    return handleUIError(error);
+                },
+                uiShown: function() {
+                  // The widget is rendered.
+                  // Hide the loader.
+                  document.getElementById('loader').style.display = 'none';
+                  $('.firebaseui-title').html('Enter your email to <br>Sign up or Login')
+                }
+            },
+            // Will use popup for IDP Providers sign-in flow instead of the default, redirect.
+            signInFlow: 'popup',
+            credentialHelper: firebaseui.auth.CredentialHelper.NONE,
+            // signInSuccessUrl: '<url-to-redirect-to-on-success>',
+            signInOptions: [
+                {
+                    provider: firebase.auth.EmailAuthProvider.PROVIDER_ID,
+                    requireDisplayName: false
+                }
+            ],
+            // Terms of service url.
+            //tosUrl: '<your-tos-url>',
+            // Privacy policy url.
+            privacyPolicyUrl: 'privacy-policy.html'
+        };
+        
+        // Initialize the FirebaseUI Widget using Firebase.
+        var ui = new firebaseui.auth.AuthUI(firebase.auth()); 
+        ui.start('#firebaseui-auth-container', uiConfig);
+        
+    </script>
 </body>
 </html>
