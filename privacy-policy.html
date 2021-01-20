@@ -8,7 +8,31 @@
     <link rel="stylesheet" href="./css/style.css">
     <link rel="shortcut icon" type="image/jpg" href="./favicon.png"/>
     <script src="https://cmp.osano.com/169lT1SMHSM8z2Iq9/0c8d599d-a316-4f53-81b1-f988effe9f99/osano.js"></script>
-    <script src="https://unpkg.com/scrollreveal@4.0.0/scrollreveal.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/scrollReveal.js/2.0.0/scrollReveal.min.js" integrity="sha512-L56hqljAjZhvB9f32klSO2ltXUlKbaOY2KdlNLOdzxJtl0jNvNQFKTP3u0MIFUP3mXTzYdy7KCaUSvi7QBWxNg==" crossorigin="anonymous"></script>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.2.3/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+         https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/8.2.3/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.3/firebase-auth.js"></script>
+
+    <script>
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        var firebaseConfig = {
+        apiKey: "AIzaSyA5jvGf_CSPRyHK3jY88ErICo57dlskQkc",
+        authDomain: "whispers-bf95a.firebaseapp.com",
+        projectId: "whispers-bf95a",
+        storageBucket: "whispers-bf95a.appspot.com",
+        messagingSenderId: "383007851153",
+        appId: "1:383007851153:web:636568171ee25466b03530",
+        measurementId: "G-8L9R1DE09Z"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        firebase.analytics();
+    </script>
     <style>
         .features-inner {
             max-width: 100%;
