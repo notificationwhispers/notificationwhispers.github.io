@@ -76,6 +76,23 @@
           -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
           background-color: #555;
         }
+        
+        .col-2-mobile {
+            padding-top: 350px;
+        }
+        
+        @media only screen and (max-device-width : 640px) {
+            .col-2-mobile {
+                padding-top: 0px;
+            }
+        }
+
+        @media only screen and (max-device-width: 768px) {
+            .col-2-mobile {
+                padding-top: 0px;
+            }
+        }
+        
     </style>
 </head>
 <body class="is-boxed">
@@ -369,24 +386,13 @@
             </section>
 
             <section class="features section">
-                <div class="container">
+                <div class="container" style="display: flex; flex-direction: row; flex-wrap: wrap; justify-content: space-between">
                     <div class="features-inner section-inner">
 						<div class="features-wrap">
 	                        <div class="feature">
 	                            <div class="feature-inner">
 									<div class="feature-header mb-16">
 										<div class="feature-icon mr-16">
-											<!--<svg width="32" height="32" xmlns="http://www.w3.org/2000/svg">
-											    <g fill-rule="nonzero" fill="none">
-											        <path d="M7 8H1a1 1 0 0 1-1-1V1a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v6a1 1 0 0 1-1 1zM19 8h-6a1 1 0 0 1-1-1V1a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v6a1 1 0 0 1-1 1z" fill="#4353FF"/>
-											        <path d="M19 20h-6a1 1 0 0 1-1-1v-6a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v6a1 1 0 0 1-1 1z" fill="#43F1FF"/>
-											        <path d="M31 8h-6a1 1 0 0 1-1-1V1a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v6a1 1 0 0 1-1 1z" fill="#4353FF"/>
-											        <path d="M7 20H1a1 1 0 0 1-1-1v-6a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v6a1 1 0 0 1-1 1z" fill="#43F1FF"/>
-											        <path d="M7 32H1a1 1 0 0 1-1-1v-6a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v6a1 1 0 0 1-1 1z" fill="#4353FF"/>
-											        <path d="M29.5 18h-3a.5.5 0 0 1-.5-.5v-3a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-.5.5z" fill="#43F1FF"/>
-											        <path d="M17.5 30h-3a.5.5 0 0 1-.5-.5v-3a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-.5.5zM29.5 30h-3a.5.5 0 0 1-.5-.5v-3a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-.5.5z" fill="#4353FF"/>
-											    </g>
-											</svg>-->
                                             <a href="https://play.google.com/store/apps/details?id=com.empushy.whispers" target="_blank"><img src="img/ic_android_color.png" style="width: 50px;"></a>
 		                                </div>
                                         <a href="https://play.google.com/store/apps/details?id=com.empushy.whispers" target="_blank"><h4 class="feature-title m-0">Android App</h4></a>
@@ -394,7 +400,7 @@
 	                                <p class="text-sm mb-0">To sync your mobile notifications with your Smart Home device, you will need to download the <strong><i>Notification Whispers</i></strong> app. The app identifies when new notifications are delivered and keeps track of which notifications are active. This enables you to manage them from your Smart Home device.</p>
                                     <a href="https://play.google.com/store/apps/details?id=com.empushy.whispers" target="_blank" class="button button-primary button-block" style="background: #2e46db; margin-top: 15px">Get the App</a>
 	                            </div>
-	                        </div>
+	                        </div><br>
 							<div class="feature">
 	                            <div class="feature-inner">
 									<div class="feature-header mb-16">
@@ -411,7 +417,7 @@
                                     </ul>
 	                            </div>
                                 <a onclick="alexaBtn()" class="button button-primary button-block" style="background: #00caff; margin-top: 15px">Enable the Skill</a>
-	                        </div>
+	                        </div><br>
 							<div class="feature">
 	                            <div class="feature-inner">
 									<div class="feature-header mb-16">
@@ -422,12 +428,7 @@
 									</div>
 	                                <p class="text-sm mb-0">Coming soon. Sign up to our Newsletter to get notified when this feature is available!</p>
 	                            </div>
-                                <div class="feature-inner">
-									<div class="powr-poll" id="5daed327_1612090197"></div><script src="https://www.powr.io/powr.js?platform=jquery"></script>
-	                            </div>
-	                        </div>
-                        
-                            
+	                        </div><br>
                             <div class="feature">
 	                            <div class="feature-inner">
 									<div class="feature-header mb-16">
@@ -450,12 +451,31 @@
                             
 						</div>
                     </div>
+                    
+                    <div class="features-inner section-inner col-2-mobile">
+						<div class="features-wrap">
+	                        <div class="feature">
+	                            <div class="feature-inner" style="margin-bottom: 0px;">
+									<div class="powr-poll" id="5daed327_1612090197"  style="margin-bottom: 0px;"></div><script src="https://www.powr.io/powr.js?platform=jquery"></script>
+	                            </div>
+	                        </div>
+                            <div class="feature" style="z-index: 99999;">
+	                            <div class="feature-inner">
+                                    <a href="https://twitter.com/NotiWhispers?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-count="false">Follow @NotiWhispers</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                                    <a href="https://twitter.com/intent/tweet?screen_name=NotiWhispers&ref_src=twsrc%5Etfw" class="twitter-mention-button" data-show-count="false">Tweet to @NotiWhispers</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+									<a class="twitter-timeline" data-width="400" data-height="500" data-theme="dark" data-chrome="transparent" href="https://twitter.com/NotiWhispers?ref_src=twsrc%5Etfw">Tweets by NotiWhispers</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+	                            </div>
+	                        </div>
+						</div>
+                    </div>
+                    
+                    
                 </div>
             </section>
         </main>
 
         <footer class="site-footer">
-			<div class="footer-bg">
+			<div class="footer-bg" style="z-index: -1;">
 				<svg width="385" height="305" xmlns="http://www.w3.org/2000/svg">
 				    <defs>
 				        <linearGradient x1="50%" y1="34.994%" x2="50%" y2="97.738%" id="footer-bg">
@@ -496,6 +516,14 @@
 							</a>
 						</li>
 						<li>
+							<a href="https://www.instagram.com/notificationwhispers/" target="_blank">
+								<span class="screen-reader-text">Instagram</span>
+								<svg width="16" height="16" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z" fill="#FFFFFF"/>
+								</svg>
+							</a>
+						</li>
+						<li>
 							<a href="https://twitter.com/NotiWhispers" target="_blank">
 								<span class="screen-reader-text">Twitter</span>
 								<svg width="16" height="16" xmlns="http://www.w3.org/2000/svg">
@@ -503,14 +531,6 @@
 								</svg>
 							</a>
 						</li>
-						<!--<li>
-							<a href="#">
-								<span class="screen-reader-text">Google</span>
-								<svg width="16" height="16" xmlns="http://www.w3.org/2000/svg">
-									<path d="M7.9 7v2.4H12c-.2 1-1.2 3-4 3-2.4 0-4.3-2-4.3-4.4 0-2.4 2-4.4 4.3-4.4 1.4 0 2.3.6 2.8 1.1l1.9-1.8C11.5 1.7 9.9 1 8 1 4.1 1 1 4.1 1 8s3.1 7 7 7c4 0 6.7-2.8 6.7-6.8 0-.5 0-.8-.1-1.2H7.9z" fill="#FFFFFF"/>
-								</svg>
-							</a>
-						</li>-->
 					</ul>
                 </div>
             </div>
